@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Countries',
       home: HomePage(),
     );
@@ -38,6 +39,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple,
       body: FutureBuilder(
         future: _future,
         builder: (context, snapshot) {
@@ -51,6 +53,9 @@ class _HomePageState extends State<HomePage> {
               final country = countries[index];
               return ListTile(
                 title: Text(country['name']),
+                textColor: Colors.white,
+
+
               );
             }),
           );
